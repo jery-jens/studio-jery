@@ -42,10 +42,11 @@ export default function Layout({ children, mode = "light" }) {
                     <>
                         <Script
                             strategy="lazyOnload"
+                            id="gtag"
                             src={`https://www.googletagmanager.com/gtag/js?id=G-ZC0LD13QFT`}
                         />
                     
-                        <Script strategy="lazyOnload">
+                        <Script strategy="lazyOnload" id="gtag-load">
                             {`
                                 window.dataLayer = window.dataLayer || [];
                                 function gtag(){dataLayer.push(arguments);}
