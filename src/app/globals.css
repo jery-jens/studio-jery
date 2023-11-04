@@ -1,27 +1,286 @@
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-Light.otf") format("opentype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-Book.otf") format("opentype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-Roman.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-Medium.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-SemiBold.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-Bold.otf") format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-ExtraBold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Overused Grotesk";
+  src: url("/fonts/OverusedGrotesk-Black.otf") format("opentype");
+  font-weight: 800;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  @apply font-primary text-white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.light-mode * {
+  @apply text-black;
+}
+
+.dark-mode {
+  @apply bg-black;
+}
+
+.light-mode {
+  @apply bg-white text-black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply leading-[100%] tracking-[-4%] font-light;
+}
+
+h1 {
+  @apply lg:text-[7vw] text-3xl leading-[100%];
+}
+
+h2 {
+  @apply lg:text-5xl text-3xl font-normal mb-10;
+}
+
+h5 {
+  @apply text-2xl font-normal mb-6;
+}
+
+.policy p {
+  @apply font-light mb-10
+}
+
+h6 {
+  @apply lg:text-2xl text-xl;
+}
+
+.leading {
+  @apply text-grey-700 font-extralight leading-[140%] lg:text-[1.5vw] text-base lg:mt-8 mt-4;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-black;
+}
+
+.c-container {
+  @apply lg:px-20 px-8;
+}
+
+/** Effects **/
+
+@keyframes contactBackdrop {
+  from {
+    right: -500px;
+    height: 0%;
+  }
+  to {
+    right: 0px;
+    height: 100%;
+  }
+}
+
+.contact-backdrop {
+  animation: contactBackdrop 2s forwards;
+  transition: all 500ms ease-in-out;
+  animation-delay: 6s;
+  right: -500px;
+  height: 0%;
+}
+
+@keyframes contactBackdropMobile {
+  from {
+    left: -500px;
+    height: 0%;
+  }
+  to {
+    left: 0px;
+    height: 100%;
+  }
+}
+
+.contact-backdrop.mobile-backdrop {
+  animation: contactBackdropMobile 2s forwards;
+  transition: all 500ms ease-in-out;
+  animation-delay: 6s;
+  left: -500px;
+  height: 0%;
+}
+
+@keyframes contactContent {
+  from {
+    opacity: 0;
+    right: -500px;
+    top: -500px;
+    filter: blur(20px);
+  }
+  to {
+    opacity: 100%;
+    right: 0px;
+    top: 0px;
+    filter: blur(0px);
+  }
+}
+
+.contact-content {
+  animation: contactContent 2s forwards;
+  animation-delay: 6s;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+  position: relative;
+  right: -500px;
+  top: -500px;
+  filter: blur(20px);
+}
+
+@keyframes contactContentMobile {
+  from {
+    opacity: 0;
+    left: -500px;
+    bottom: -500px;
+    filter: blur(20px);
+  }
+  to {
+    opacity: 100%;
+    left: 0px;
+    bottom: 0px;
+    filter: blur(0px);
+  }
+}
+
+.contact-content.mobile-content {
+  animation: contactContentMobile 2s forwards;
+  animation-delay: 6s;
+  transition: all 500ms ease-in-out;
+  right: auto;
+  top: auto;
+  left: -500px;
+  bottom: -500px;
+  filter: blur(20px);
+}
+
+@keyframes splashObject {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.splash {
+  animation: splashObject 3s forwards;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.column {
+  animation: slideUp 2s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+.column:nth-child(2) {
+  animation-delay: 3.1s;
+}
+
+.column:nth-child(3) {
+  animation-delay: 3.2s;
+}
+
+.column:nth-child(4) {
+  animation-delay: 3.3s;
+}
+
+.column:nth-child(5) {
+  animation-delay: 3.4s;
+}
+
+.column:nth-child(6) {
+  animation-delay: 3.5s;
+}
+
+.column:nth-child(7) {
+  animation-delay: 3.6s;
+}
+
+.column:nth-child(8) {
+  animation-delay: 3.7s;
+}
+
+@keyframes loadingScreen {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+  }
+}
+
+.loading-screen {
+  animation: loadingScreen 0s forwards;
+  animation-delay: 5.5s;
+}
+
+@keyframes loadingLogo {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-logo {
+  animation: loadingLogo 5s forwards;
+  opacity: 0;
 }
