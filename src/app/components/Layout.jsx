@@ -59,7 +59,7 @@ export default function Layout({ children, mode = "light" }) {
                 ) : ""
             }
             <div className="min-h-screen relative">
-                <header className="w-screen c-container py-8 fixed top-0 left-0 z-20 flex lg:justify-start justify-center">
+                <header className="w-screen c-container py-8 absolute top-0 left-0 z-20 flex lg:justify-start justify-center">
                     <Link href="/" className="inline-block">
                         <Logo color={mode === "dark" ? "#FFFFFF" : "#090909"} />
                     </Link>
