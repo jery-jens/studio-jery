@@ -1,5 +1,4 @@
 export default function Logo({ color = "#FFFFFF"}) {
-    console.log(color)
     return (
         <svg width="34" height="41" viewBox="0 0 34 41" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_47_215" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="41">

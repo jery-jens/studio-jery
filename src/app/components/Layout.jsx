@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Logo } from ".";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 export default function Layout({ children, mode = "light" }) {
     const [ hideBanner, setHideBanner ] = useState(false); 
@@ -31,6 +32,10 @@ export default function Layout({ children, mode = "light" }) {
 
     return (
         <div className={`${mode}-mode`}>
+            <Head>
+                <meta property="og:image" content="/images/opengraph.png" />
+                <meta property="og:image:alt" content="Jery Creative Design Studio" />
+            </Head>
             {
                 cookieApproved ? (
                     <>
