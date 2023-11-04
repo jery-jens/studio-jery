@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Logo } from ".";
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function Layout({ children, mode = "light" }) {
     const [ hideBanner, setHideBanner ] = useState(false); 
