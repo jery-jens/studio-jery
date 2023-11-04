@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bradgarropy/next-google-analytics": "^1.0.2",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.492",
     "@studio-freight/lenis": "^1.0.27",

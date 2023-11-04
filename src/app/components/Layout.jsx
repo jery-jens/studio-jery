@@ -37,27 +37,6 @@ export default function Layout({ children, mode = "light" }) {
                 <meta property="og:image" content="/images/opengraph.png" />
                 <meta property="og:image:alt" content="Jery Creative Design Studio" />
             </Head>
-            {
-                cookieApproved ? (
-                    <>
-                        <Script
-                            strategy="lazyOnload"
-                            id="gtag"
-                            src={`https://www.googletagmanager.com/gtag/js?id=G-ZC0LD13QFT`}
-                        />
-                    
-                        <Script strategy="lazyOnload" id="gtag-load">
-                            {`
-                                window.dataLayer = window.dataLayer || [];
-                                function gtag(){dataLayer.push(arguments);}
-                                gtag('js', new Date());
-
-                                gtag('config', 'G-ZC0LD13QFT');
-                            `}
-                        </Script>
-                    </>
-                ) : ""
-            }
             <div className="min-h-screen relative">
                 <header className="w-screen c-container py-8 absolute top-0 left-0 z-20 flex lg:justify-start justify-center">
                     <Link href="/" className="inline-block">

@@ -1,4 +1,6 @@
+import Script from 'next/script';
 import './globals.css'
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 export const metadata = {
   title: 'Jery | Creative Design Studio',
@@ -8,6 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleAnalytics measurementId="G-ZC0LD13QFT" />
       <body>{children}</body>
     </html>
   )
